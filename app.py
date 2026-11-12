@@ -8,7 +8,7 @@ people = {}
 @app.route('/')
 def home():
     html = """
-    <h1 style="text-align:center;color:blue;">🔒 MY LOCK SEARCH</h1>
+    <h1 style="text-align:center;color:blue;">🔒 FIND ME SEARCH</h1>
     <p style="text-align:center;">Na YOU control your name! No be Truecaller!</p>
 
     <!-- ADS SPACE - NA HERE MONEY GO DEY -->
@@ -17,10 +17,10 @@ def home():
     </div>
 <div style="background:#25D366;padding:15px;border-radius:10px;text-align:center;margin:15px 0;color:white;">
 <h3>🔥 MAKE AM VIRAL - SHARE NOW!</h3>
-<p>Share MY LOCK for your WhatsApp Status, help your friends no fall for SCAMMER!</p>
-<a href="https://wa.me/?text=No%20more%20SCAMMER%20tag!%20Check%20any%20number%20for%20MY%20LOCK%20-%20Na%20you%20go%20put%20your%20own%20name!%20Add%20yourself%20FREE%20here:%20https://mylock-ph.com%20Call%2009029560760" target="_blank" style="display:block;background:white;color:#25D366;padding:12px;border-radius:8px;font-weight:bold;text-decoration:none;margin:8px 0;">📲 SHARE FOR WHATSAPP</a>
-<a href="https://www.facebook.com/sharer/sharer.php?u=https://mylock-ph.com" target="_blank" style="display:block;background:#1877F2;color:white;padding:12px;border-radius:8px;font-weight:bold;text-decoration:none;margin:8px 0;">📘 SHARE FOR FACEBOOK</a>
-<button onclick="navigator.clipboard.writeText('No more SCAMMER tag! Check number for MY LOCK - Add yourself FREE: https://mylock-ph.com Call 09029560760');alert('Link copied! Go paste for TikTok / Status!')" style="width:100%;background:#000;color:white;padding:12px;border-radius:8px;font-weight:bold;border:none;">🔗 COPY LINK FOR TIKTOK</button>
+<p>Share FIND ME for your WhatsApp Status, help your friends no fall for SCAMMER!</p>
+<a href="https://wa.me/?text=No%20more%20SCAMMER%20tag!%20Check%20any%20number%20for%20MY%20LOCK%20-%20Na%20you%20go%20put%20your%20own%20name!%20Add%20yourself%20FREE%20here:%20https://findme-ph.com%20Call%2009029560760" target="_blank" style="display:block;background:white;color:#25D366;padding:12px;border-radius:8px;font-weight:bold;text-decoration:none;margin:8px 0;">📲 SHARE FOR WHATSAPP</a>
+<a href="https://www.facebook.com/sharer/sharer.php?u=https://findme-ph.com" target="_blank" style="display:block;background:#1877F2;color:white;padding:12px;border-radius:8px;font-weight:bold;text-decoration:none;margin:8px 0;">📘 SHARE FOR FACEBOOK</a>
+<button onclick="navigator.clipboard.writeText('No more SCAMMER tag! Check number for FIND ME - Add yourself FREE: https://findme-ph.com Call 09029560760');alert('Link copied! Go paste for TikTok / Status!')" style="width:100%;background:#000;color:white;padding:12px;border-radius:8px;font-weight:bold;border:none;">🔗 COPY LINK FOR TIKTOK</button>
 <p style="font-size:13px;margin-top:10px;">Share am, comment LOCK for TikTok, we go add you FREE + give you VERIFIED TICK!</p>
 </div>
 
@@ -37,10 +37,10 @@ def home():
     </form>
 <div style="background:#25D366;padding:15px;border-radius:10px;text-align:center;margin:15px 0;color:white;">
 <h3>🔥 MAKE AM VIRAL - SHARE NOW!</h3>
-<p>Share MY LOCK for your WhatsApp Status, help your friends no fall for SCAMMER!</p>
-<a href="https://wa.me/?text=No%20more%20SCAMMER%20tag!%20Check%20any%20number%20for%20MY%20LOCK%20-%20Na%20you%20go%20put%20your%20own%20name!%20Add%20yourself%20FREE%20here:%20https://mylock-ph.com%20Call%2009029560760" target="_blank" style="display:block;background:white;color:#25D366;padding:12px;border-radius:8px;font-weight:bold;text-decoration:none;margin:8px 0;">📲 SHARE FOR WHATSAPP</a>
-<a href="https://www.facebook.com/sharer/sharer.php?u=https://mylock-ph.com" target="_blank" style="display:block;background:#1877F2;color:white;padding:12px;border-radius:8px;font-weight:bold;text-decoration:none;margin:8px 0;">📘 SHARE FOR FACEBOOK</a>
-<button onclick="navigator.clipboard.writeText('No more SCAMMER tag! Check number for MY LOCK - Add yourself FREE: https://mylock-ph.com Call 09029560760');alert('Link copied! Go paste for TikTok / Status!')" style="width:100%;background:#000;color:white;padding:12px;border-radius:8px;font-weight:bold;border:none;">🔗 COPY LINK FOR TIKTOK</button>
+<p>Share FIND ME for your WhatsApp Status, help your friends no fall for SCAMMER!</p>
+<a href="https://wa.me/?text=No%20more%20SCAMMER%20tag!%20Check%20any%20number%20for%20MY%20LOCK%20-%20Na%20you%20go%20put%20your%20own%20name!%20Add%20yourself%20FREE%20here:%20https://findme-ph.com%20Call%2009029560760" target="_blank" style="display:block;background:white;color:#25D366;padding:12px;border-radius:8px;font-weight:bold;text-decoration:none;margin:8px 0;">📲 SHARE FOR WHATSAPP</a>
+<a href="https://www.facebook.com/sharer/sharer.php?u=https://findme-ph.com" target="_blank" style="display:block;background:#1877F2;color:white;padding:12px;border-radius:8px;font-weight:bold;text-decoration:none;margin:8px 0;">📘 SHARE FOR FACEBOOK</a>
+<button onclick="navigator.clipboard.writeText('No more SCAMMER tag! Check number for FIND ME - Add yourself FREE: https://findme-ph.com Call 09029560760');alert('Link copied! Go paste for TikTok / Status!')" style="width:100%;background:#000;color:white;padding:12px;border-radius:8px;font-weight:bold;border:none;">🔗 COPY LINK FOR TIKTOK</button>
 <p style="font-size:13px;margin-top:10px;">Share am, comment LOCK for TikTok, we go add you FREE + give you VERIFIED TICK!</p>
 </div>
 
@@ -48,7 +48,7 @@ def home():
     <h3>People wey don add themself:</h3>
     """
     for phone, info in people.items():
-        html += f"<p><b>{info['name']}</b> - {phone}<br>📍 {info['address']} | Age: {info['age']} | ✅ Verified by MY LOCK</p><hr>"
+        html += f"<p><b>{info['name']}</b> - {phone}<br>📍 {info['address']} | Age: {info['age']} | ✅ Verified by FIND ME</p><hr>"
     if not people:
         html += "<p>Nobody don add yet. Be the first!</p>"
     return html
@@ -66,10 +66,10 @@ def add_form():
     </form>
 <div style="background:#25D366;padding:15px;border-radius:10px;text-align:center;margin:15px 0;color:white;">
 <h3>🔥 MAKE AM VIRAL - SHARE NOW!</h3>
-<p>Share MY LOCK for your WhatsApp Status, help your friends no fall for SCAMMER!</p>
-<a href="https://wa.me/?text=No%20more%20SCAMMER%20tag!%20Check%20any%20number%20for%20MY%20LOCK%20-%20Na%20you%20go%20put%20your%20own%20name!%20Add%20yourself%20FREE%20here:%20https://mylock-ph.com%20Call%2009029560760" target="_blank" style="display:block;background:white;color:#25D366;padding:12px;border-radius:8px;font-weight:bold;text-decoration:none;margin:8px 0;">📲 SHARE FOR WHATSAPP</a>
-<a href="https://www.facebook.com/sharer/sharer.php?u=https://mylock-ph.com" target="_blank" style="display:block;background:#1877F2;color:white;padding:12px;border-radius:8px;font-weight:bold;text-decoration:none;margin:8px 0;">📘 SHARE FOR FACEBOOK</a>
-<button onclick="navigator.clipboard.writeText('No more SCAMMER tag! Check number for MY LOCK - Add yourself FREE: https://mylock-ph.com Call 09029560760');alert('Link copied! Go paste for TikTok / Status!')" style="width:100%;background:#000;color:white;padding:12px;border-radius:8px;font-weight:bold;border:none;">🔗 COPY LINK FOR TIKTOK</button>
+<p>Share FIND ME for your WhatsApp Status, help your friends no fall for SCAMMER!</p>
+<a href="https://wa.me/?text=No%20more%20SCAMMER%20tag!%20Check%20any%20number%20for%20MY%20LOCK%20-%20Na%20you%20go%20put%20your%20own%20name!%20Add%20yourself%20FREE%20here:%20https://findme-ph.com%20Call%2009029560760" target="_blank" style="display:block;background:white;color:#25D366;padding:12px;border-radius:8px;font-weight:bold;text-decoration:none;margin:8px 0;">📲 SHARE FOR WHATSAPP</a>
+<a href="https://www.facebook.com/sharer/sharer.php?u=https://findme-ph.com" target="_blank" style="display:block;background:#1877F2;color:white;padding:12px;border-radius:8px;font-weight:bold;text-decoration:none;margin:8px 0;">📘 SHARE FOR FACEBOOK</a>
+<button onclick="navigator.clipboard.writeText('No more SCAMMER tag! Check number for FIND ME - Add yourself FREE: https://findme-ph.com Call 09029560760');alert('Link copied! Go paste for TikTok / Status!')" style="width:100%;background:#000;color:white;padding:12px;border-radius:8px;font-weight:bold;border:none;">🔗 COPY LINK FOR TIKTOK</button>
 <p style="font-size:13px;margin-top:10px;">Share am, comment LOCK for TikTok, we go add you FREE + give you VERIFIED TICK!</p>
 </div>
 
@@ -92,10 +92,10 @@ def search():
     found = False
     for phone, info in people.items():
         if q in phone or q.lower() in info['name'].lower():
-            html += f"<h3>✅ {info['name']}</h3><p>📞 {phone}<br>📍 {info['address']}<br>Age: {info['age']}<br>🔒 Verified by MY LOCK - Na owner put am!</p>"
+            html += f"<h3>✅ {info['name']}</h3><p>📞 {phone}<br>📍 {info['address']}<br>Age: {info['age']}<br>🔒 Verified by FIND ME - Na owner put am!</p>"
             found = True
     if not found:
-        html += "<p>Not found. Tell the person to add themself for MY LOCK!</p>"
+        html += "<p>Not found. Tell the person to add themself for FIND ME!</p>"
     return html
 
 if __name__ == '__main__':
@@ -111,7 +111,7 @@ people = [
 def home():
     return """
     <body style="text-align:center; font-family:Arial; background:#f0f8ff; padding:20px;">
-    <h1 style="color:#1a73e8">🔍 MY LOCK SEARCH</h1>
+    <h1 style="color:#1a73e8">🔍 FIND ME SEARCH</h1>
     <p>Search By Name or Number - Like Truecaller!</p>
     <form method="GET" action="/search">
     <input name="q" placeholder="Type number e.g. 0812..." style="padding:12px; width:85%; font-size:16px; border-radius:20px; border:1px solid #ccc; text-align:center;"><br><br>
@@ -119,10 +119,10 @@ def home():
     </form>
 <div style="background:#25D366;padding:15px;border-radius:10px;text-align:center;margin:15px 0;color:white;">
 <h3>🔥 MAKE AM VIRAL - SHARE NOW!</h3>
-<p>Share MY LOCK for your WhatsApp Status, help your friends no fall for SCAMMER!</p>
-<a href="https://wa.me/?text=No%20more%20SCAMMER%20tag!%20Check%20any%20number%20for%20MY%20LOCK%20-%20Na%20you%20go%20put%20your%20own%20name!%20Add%20yourself%20FREE%20here:%20https://mylock-ph.com%20Call%2009029560760" target="_blank" style="display:block;background:white;color:#25D366;padding:12px;border-radius:8px;font-weight:bold;text-decoration:none;margin:8px 0;">📲 SHARE FOR WHATSAPP</a>
-<a href="https://www.facebook.com/sharer/sharer.php?u=https://mylock-ph.com" target="_blank" style="display:block;background:#1877F2;color:white;padding:12px;border-radius:8px;font-weight:bold;text-decoration:none;margin:8px 0;">📘 SHARE FOR FACEBOOK</a>
-<button onclick="navigator.clipboard.writeText('No more SCAMMER tag! Check number for MY LOCK - Add yourself FREE: https://mylock-ph.com Call 09029560760');alert('Link copied! Go paste for TikTok / Status!')" style="width:100%;background:#000;color:white;padding:12px;border-radius:8px;font-weight:bold;border:none;">🔗 COPY LINK FOR TIKTOK</button>
+<p>Share FIND ME for your WhatsApp Status, help your friends no fall for SCAMMER!</p>
+<a href="https://wa.me/?text=No%20more%20SCAMMER%20tag!%20Check%20any%20number%20for%20MY%20LOCK%20-%20Na%20you%20go%20put%20your%20own%20name!%20Add%20yourself%20FREE%20here:%20https://findme-ph.com%20Call%2009029560760" target="_blank" style="display:block;background:white;color:#25D366;padding:12px;border-radius:8px;font-weight:bold;text-decoration:none;margin:8px 0;">📲 SHARE FOR WHATSAPP</a>
+<a href="https://www.facebook.com/sharer/sharer.php?u=https://findme-ph.com" target="_blank" style="display:block;background:#1877F2;color:white;padding:12px;border-radius:8px;font-weight:bold;text-decoration:none;margin:8px 0;">📘 SHARE FOR FACEBOOK</a>
+<button onclick="navigator.clipboard.writeText('No more SCAMMER tag! Check number for FIND ME - Add yourself FREE: https://findme-ph.com Call 09029560760');alert('Link copied! Go paste for TikTok / Status!')" style="width:100%;background:#000;color:white;padding:12px;border-radius:8px;font-weight:bold;border:none;">🔗 COPY LINK FOR TIKTOK</button>
 <p style="font-size:13px;margin-top:10px;">Share am, comment LOCK for TikTok, we go add you FREE + give you VERIFIED TICK!</p>
 </div>
 <br>
@@ -161,10 +161,10 @@ def add():
     </form>
 <div style="background:#25D366;padding:15px;border-radius:10px;text-align:center;margin:15px 0;color:white;">
 <h3>🔥 MAKE AM VIRAL - SHARE NOW!</h3>
-<p>Share MY LOCK for your WhatsApp Status, help your friends no fall for SCAMMER!</p>
-<a href="https://wa.me/?text=No%20more%20SCAMMER%20tag!%20Check%20any%20number%20for%20MY%20LOCK%20-%20Na%20you%20go%20put%20your%20own%20name!%20Add%20yourself%20FREE%20here:%20https://mylock-ph.com%20Call%2009029560760" target="_blank" style="display:block;background:white;color:#25D366;padding:12px;border-radius:8px;font-weight:bold;text-decoration:none;margin:8px 0;">📲 SHARE FOR WHATSAPP</a>
-<a href="https://www.facebook.com/sharer/sharer.php?u=https://mylock-ph.com" target="_blank" style="display:block;background:#1877F2;color:white;padding:12px;border-radius:8px;font-weight:bold;text-decoration:none;margin:8px 0;">📘 SHARE FOR FACEBOOK</a>
-<button onclick="navigator.clipboard.writeText('No more SCAMMER tag! Check number for MY LOCK - Add yourself FREE: https://mylock-ph.com Call 09029560760');alert('Link copied! Go paste for TikTok / Status!')" style="width:100%;background:#000;color:white;padding:12px;border-radius:8px;font-weight:bold;border:none;">🔗 COPY LINK FOR TIKTOK</button>
+<p>Share FIND ME for your WhatsApp Status, help your friends no fall for SCAMMER!</p>
+<a href="https://wa.me/?text=No%20more%20SCAMMER%20tag!%20Check%20any%20number%20for%20MY%20LOCK%20-%20Na%20you%20go%20put%20your%20own%20name!%20Add%20yourself%20FREE%20here:%20https://findme-ph.com%20Call%2009029560760" target="_blank" style="display:block;background:white;color:#25D366;padding:12px;border-radius:8px;font-weight:bold;text-decoration:none;margin:8px 0;">📲 SHARE FOR WHATSAPP</a>
+<a href="https://www.facebook.com/sharer/sharer.php?u=https://findme-ph.com" target="_blank" style="display:block;background:#1877F2;color:white;padding:12px;border-radius:8px;font-weight:bold;text-decoration:none;margin:8px 0;">📘 SHARE FOR FACEBOOK</a>
+<button onclick="navigator.clipboard.writeText('No more SCAMMER tag! Check number for FIND ME - Add yourself FREE: https://findme-ph.com Call 09029560760');alert('Link copied! Go paste for TikTok / Status!')" style="width:100%;background:#000;color:white;padding:12px;border-radius:8px;font-weight:bold;border:none;">🔗 COPY LINK FOR TIKTOK</button>
 <p style="font-size:13px;margin-top:10px;">Share am, comment LOCK for TikTok, we go add you FREE + give you VERIFIED TICK!</p>
 </div>
 
@@ -173,4 +173,4 @@ def add():
     """
 @app.route('/manifest.json')
 def manifest():
-    return {"name":"MY LOCK SEARCH","short_name":"MY LOCK","start_url":"/","display":"standalone","background_color":"#f0f8ff","theme_color":"#1a73e8","icons":[{"src":"https://cdn-icons-png.flaticon.com/512/3064/3064155.png","sizes":"512x512","type":"image/png"}]}
+    return {"name":"FIND ME SEARCH","short_name":"FIND ME","start_url":"/","display":"standalone","background_color":"#f0f8ff","theme_color":"#1a73e8","icons":[{"src":"https://cdn-icons-png.flaticon.com/512/3064/3064155.png","sizes":"512x512","type":"image/png"}]}
