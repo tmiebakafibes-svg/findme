@@ -1,7 +1,9 @@
 from flask import Flask, request, redirect
 
 app = Flask(__name__)
-
+@app.route('/google2a3c980215f4cbe3.html')
+def google_verify():
+    return "google-site-verification: google2a3c980215f4cbe3.html"
 # Our small database - na here names dey
 people = {}
 
