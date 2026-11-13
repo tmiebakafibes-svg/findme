@@ -8,7 +8,7 @@ people = {}
 @app.route('/')
 def home():
     html = """
-    <meta name="google-site-verification" content="2JOES9UqjFu0xs5P1SZLCWP33B3cuoUAnK60dshkYHk" />
+    <meta name="google-site-verification" content="SgdwEEzzk4MpOQr0-YrRYKTOZH0ZkBy1WUmtctrgsqU" />
     <h1 style="text-align:center;color:blue;">🔒 FIND ME SEARCH</h1>
     <p style="text-align:center;">Na YOU control your name! No be Truecaller!</p>
 
