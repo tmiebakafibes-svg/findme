@@ -14,6 +14,7 @@ HTML = """
 <!DOCTYPE html>
 <html>
 <head>
+<meta name="google-site-verification" content="2JOES9UqjFu0xs5P1SZLCWP33B3cuoUAnK60dshkYHk" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>CHRON AGOPOSTAM - FIND ME</title>
 <style>
