@@ -97,9 +97,11 @@ def clean():
         return "WRONG PASSWORD! <a href='/'>Go Back</a>"
     people.clear()
     return redirect("/")
-
-if __name__ == "__main__":
-    app.run()
 @app.route('/privacy')
 def privacy():
     return "CHRON AGOPOSTAM - FIND ME Privacy Policy: We only store Name and Phone Number you give us. We do not sell your data. To delete your data, contact Admin on WhatsApp. Your data is stored securely."
+if __name__ == "__main__":
+    app.run()
+
+
+    
