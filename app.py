@@ -15,8 +15,10 @@ HTML = """
 <html>
 <head>
 <meta name="google-site-verification" content="2JOES9UqjFu0xs5P1SZLCWP33B3cuoUAnK60dshkYHk" />
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CHRON AGOPOSTAM - FIND ME</title>
+<meta name="viewport" content="width=device-width, initial-scale=1"><title>FindMe by CHRON AGOPOSTAM - Find People Anywhere in the World</title>
+<title>FindMe by CHRON AGOPOSTAM - Find People Anywhere in the World</title>
+<meta name="description" content="FindMe helps you find people by name all over the world. Add your name, let the world find you. Created by CHRON AGOPOSTAM in Port Harcourt, Nigeria.">
+<meta name="keywords" content="FindMe, find people, find person by name, CHRON AGOPOSTAM, Port Harcourt, Nigeria">
 <style>
 body{background:#0a0a0a;color:#fff;font-family:Arial;text-align:center;padding:20px}
 h1{color:#FFD700}
