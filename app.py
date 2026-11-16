@@ -22,7 +22,7 @@ HTML = """
 <meta property="og:title" content="FindMe by CHRON AGOPOSTAM - Find People Anywhere">
 <meta property="og:description" content="Add your name, let the world find you. Find people by name anywhere in the world.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://findme.onrender.com">
+<meta property="og:url" content="https://findme-zs89.onrender.com/">
 <meta name="twitter:card" content="summary_large_image">
 <style>
 body{background:#0a0a0a;color:#fff;font-family:Arial;text-align:center;padding:20px}
