@@ -63,6 +63,13 @@ button{padding:12px 20px;border:none;border-radius:10px;font-weight:bold;margin:
 <br><br><button class="red">🧹 CLEAN ALL - Admin Only</button>
 </form>
 <p style="font-size:12px;color:#888">Made by T Miebaka Fibes | Secured by Chron</p>
+<div style="margin-top:40px;padding:20px;background:#1a1a1a;border-radius:10px;text-align:left">
+<h3 style="color:#FFD700">About FindMe</h3>
+<p>FindMe is a free people search platform created by CHRON AGOPOSTAM in Port Harcourt, Nigeria. It helps people find each other by name anywhere in the world. Add your name, let the world find you.</p>
+<h3 style="color:#FFD700">Privacy Policy</h3>
+<p>We respect your privacy. FindMe only shows the name and information you choose to add. We do not sell your data. If you want your name removed, contact us and we will remove it. By using FindMe, you agree to use it respectfully and not to harass anyone.</p>
+<p style="font-size:12px;color:#999">© 2026 FindMe by CHRON AGOPOSTAM - Port Harcourt, Nigeria</p>
+</div>
 </body>
 </html>
 """
