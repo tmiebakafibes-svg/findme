@@ -19,6 +19,11 @@ HTML = """
 <title>FindMe by CHRON AGOPOSTAM - Find People Anywhere in the World</title>
 <meta name="description" content="FindMe helps you find people by name all over the world. Add your name, let the world find you. Created by CHRON AGOPOSTAM in Port Harcourt, Nigeria.">
 <meta name="keywords" content="FindMe, find people, find person by name, CHRON AGOPOSTAM, Port Harcourt, Nigeria">
+<meta property="og:title" content="FindMe by CHRON AGOPOSTAM - Find People Anywhere">
+<meta property="og:description" content="Add your name, let the world find you. Find people by name anywhere in the world.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://findme.onrender.com">
+<meta name="twitter:card" content="summary_large_image">
 <style>
 body{background:#0a0a0a;color:#fff;font-family:Arial;text-align:center;padding:20px}
 h1{color:#FFD700}
