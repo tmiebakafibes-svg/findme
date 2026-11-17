@@ -54,11 +54,6 @@ button{padding:12px 20px;border:none;border-radius:10px;font-weight:bold;margin:
 {% for p in people %}
 <div class="card">
 <b>{{ p[0] }}</b><br>{{ p[1] }}<br>
-<form method="POST" action="/delete">
-<input type="hidden" name="number" value="{{ p[1] }}">
-<input type="password" name="pwd" placeholder="Admin Password" style="width:60%">
-<button class="red">🗑 DELETE - Admin Only</button>
-</form>
 </div>
 {% endfor %}
 <br>
