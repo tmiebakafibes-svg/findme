@@ -36,7 +36,6 @@ button{padding:12px 20px;border:none;border-radius:10px;font-weight:bold;margin:
 </style>
 </head>
 <body>
-<h1>👑 CHRON AGOPOSTAM</h1>
 <h2 style="color:#FFD700">FIND ME SEARCH</h2>
 <p>Search By Name or Number - Secure Version</p>
 <form method="POST" action="/search">
@@ -114,7 +113,7 @@ def clean():
     return redirect("/")
 @app.route('/privacy')
 def privacy():
-    return - FIND ME Privacy Policy: We only store Name and Phone Number you give us. We do not sell your data. To delete your data, contact Admin on WhatsApp. Your data is stored securely."
+    return"CHORN AGOPOSTAM- FIND ME Privacy Policy: We only store Name and Phone Number you give us. We do not sell your data. To delete your data, contact Admin on WhatsApp. Your data is stored securely."
 @app.route("/sitemap.xml")
 def sitemap():
     xml = """<?xml version="1.0" encoding="UTF-8"?>
