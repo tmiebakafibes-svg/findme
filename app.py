@@ -62,10 +62,6 @@ button{padding:12px 20px;border:none;border-radius:10px;font-weight:bold;margin:
 </div>
 {% endfor %}
 <br>
-<form method="POST" action="/clean">
-<input type="password" name="pwd" placeholder="Admin Password for Cleaning">
-<br><br><button class="red">🧹 CLEAN ALL - Admin Only</button>
-</form>
 <p style="font-size:12px;color:#888">Made by T Miebaka Fibes | Secured by Chron</p>
 <div style="margin-top:40px;padding:20px;background:#1a1a1a;border-radius:10px;text-align:left">
 <h3 style="color:#FFD700">About FindMe</h3>
