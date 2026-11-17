@@ -8,7 +8,7 @@ def google_verify():
     return "google-site-verification: google2a3c980215f4cbe3.html"
 
 people = []
-ADMIN_PASSWORD = "Chronking@2026"
+ADMIN_PASSWORD = "Miebaka2026"
 
 HTML = """
 <!DOCTYPE html>
