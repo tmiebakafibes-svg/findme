@@ -114,7 +114,7 @@ def clean():
     return redirect("/")
 @app.route('/privacy')
 def privacy():
-    return "find me searcher - FIND ME Privacy Policy: We only store Name and Phone Number you give us. We do not sell your data. To delete your data, contact Admin on WhatsApp. Your data is stored securely."
+    return - FIND ME Privacy Policy: We only store Name and Phone Number you give us. We do not sell your data. To delete your data, contact Admin on WhatsApp. Your data is stored securely."
 @app.route("/sitemap.xml")
 def sitemap():
     xml = """<?xml version="1.0" encoding="UTF-8"?>
