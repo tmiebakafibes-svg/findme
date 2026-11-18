@@ -13,7 +13,9 @@ HTML = """
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>FindMe - Find Anyone</title>
+<title>FindMe - Find Anyone in Nigeria | Search People By Name & Number</title>
+<meta name="description" content="FindMe is Nigeria's free people search. Find anyone by name or phone number. Add yourself and be found. Created by CHRON.">
+<meta name="keywords" content="FindMe, find people Nigeria, search phone number Nigeria, find anyone">
 <style>
 * { box-sizing: border-box; font-family: Arial, sans-serif; }
 body { margin:0; padding:0; transition:0.3s; }
