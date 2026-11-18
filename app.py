@@ -2,7 +2,7 @@ from flask import Flask, request, render_template_string
 import sqlite3, os
 
 app = Flask(__name__)
-
+app.secret_key = os.environ.get('SECRET_KEY', 'findme-change-this-key-12345')
 def get_db():
     conn = sqlite3.connect('people.db')
     conn.execute('CREATE TABLE IF NOT EXISTS people (name TEXT, number TEXT)')
