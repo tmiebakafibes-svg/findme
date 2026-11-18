@@ -9,6 +9,14 @@ def add_security_headers(response):
     response.headers['X-Frame-Options'] = 'DENY'
     response.headers['X-XSS-Protection'] = '1; mode=block'
     return response
+@app.errorhandler(404)
+def not_found(e):
+    return "Page not found - Go back to FindMe", 404
+
+@app.errorhandler(500)
+def server_error(e):
+    return "Something went wrong - Try again later", 500
+
 def get_db():
     conn = sqlite3.connect('people.db')
     conn.execute('CREATE TABLE IF NOT EXISTS people (name TEXT, number TEXT)')
