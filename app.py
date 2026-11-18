@@ -1,118 +1,127 @@
-from flask import Flask, request, render_template_string, redirect, Response
-import html
+from flask import Flask, request, render_template_string
+import sqlite3, os
 
 app = Flask(__name__)
 
-@app.route('/google2a3c980215f4cbe3.html')
-def google_verify():
-    return "google-site-verification: google2a3c980215f4cbe3.html"
-
-people = []
-ADMIN_PASSWORD = "Miebaka2026"
+def get_db():
+    conn = sqlite3.connect('people.db')
+    conn.execute('CREATE TABLE IF NOT EXISTS people (name TEXT, number TEXT)')
+    return conn
 
 HTML = """
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="google-site-verification" content="2JOES9UqjFu0xs5P1SZLCWP33B3cuoUAnK60dshkYHk" />
-<meta name="viewport" content="width=device-width, initial-scale=1"><title>FindMe by CHRON AGOPOSTAM - Find People Anywhere in the World</title>
-<title>FindMe by CHRON AGOPOSTAM - Find People Anywhere in the World</title>
-<meta name="description" content="FindMe helps you find people by name all over the world. Add your name, let the world find you. Created by CHRON AGOPOSTAM in Port Harcourt, Nigeria.">
-<meta name="keywords" content="FindMe, find people, find person by name, CHRON AGOPOSTAM, Port Harcourt, Nigeria">
-<meta property="og:title" content="FindMe by CHRON AGOPOSTAM - Find People Anywhere">
-<meta property="og:description" content="Add your name, let the world find you. Find people by name anywhere in the world.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://findme-zs89.onrender.com/">
-<meta name="twitter:card" content="summary_large_image">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FindMe - Find Anyone</title>
 <style>
-body{background:#0a0a0a;color:#fff;font-family:Arial;text-align:center;padding:20px}
-h1{color:#FFD700}
-input{padding:12px;width:85%;border-radius:10px;border:2px solid #FFD700;background:#111;color:#fff}
-button{padding:12px 20px;border:none;border-radius:10px;font-weight:bold;margin:5px}
-.gold{background:#FFD700;color:#000}
-.red{background:#ff3333;color:#fff}
-.green{background:#00cc66;color:#fff}
-.card{background:#1a1a1a;border:1px solid #FFD700;padding:15px;border-radius:15px;margin:10px}
+* { box-sizing: border-box; font-family: Arial, sans-serif; }
+body { margin:0; padding:0; transition:0.3s; }
+body.gold { background:#0a0a0a; color:white; }
+body.white { background:#f5f7fa; color:#111; }
+body.green { background:#e8f5e9; color:#111; }
+
+/* HEADER */
+.header { text-align:center; padding:25px 15px 10px; }
+.logo { font-size:38px; font-weight:900; letter-spacing:2px; }
+body.gold .logo { color:#FFD700; }
+body.white .logo { color:#1a73e8; }
+body.green .logo { color:#075E54; }
+.sub { font-size:14px; opacity:0.7; margin-top:4px; }
+
+/* THEME BUTTONS */
+.themes { display:flex; justify-content:center; gap:8px; margin:12px 0; }
+.themes button { border:none; padding:8px 14px; border-radius:20px; font-weight:bold; cursor:pointer; font-size:12px; }
+.t-gold { background:#FFD700; color:black; }
+.t-white { background:white; color:#1a73e8; border:1px solid #ddd !important; }
+.t-green { background:#25D366; color:white; }
+
+/* BOX */
+.box { max-width:480px; margin:0 auto; padding:0 16px 30px; }
+input { width:100%; padding:14px; border-radius:12px; border:2px solid #FFD700; margin-bottom:10px; font-size:16px; outline:none; background:white; color:black; }
+body.white input { border-color:#1a73e8; }
+body.green input { border-color:#25D366; }
+.btn { width:100%; padding:14px; border:none; border-radius:12px; font-weight:900; font-size:16px; cursor:pointer; }
+body.gold .btn-search { background:#FFD700; color:black; box-shadow:0 4px 15px rgba(255,215,0,0.4); }
+body.white .btn-search { background:#1a73e8; color:white; }
+body.green .btn-search { background:#075E54; color:white; }
+.btn-add { background:#25D366; color:white; box-shadow:0 4px 15px rgba(37,211,102,0.4); margin-top:5px; }
+.section-title { text-align:center; font-size:20px; font-weight:900; margin:22px 0 12px; }
+.card { background:white; color:black; padding:16px; border-radius:16px; margin-bottom:10px; display:flex; align-items:center; justify-content:space-between; box-shadow:0 2px 10px rgba(0,0,0,0.1); }
+.card b { font-size:18px; }
+.card span { font-size:15px; color:#555; }
+.badge { background:#25D366; color:white; font-size:11px; padding:4px 8px; border-radius:20px; font-weight:bold; }
+.about { background:#111; color:white; border-radius:16px; padding:18px; margin-top:20px; }
+body.white .about { background:white; color:#111; box-shadow:0 2px 10px rgba(0,0,0,0.1); }
+body.green .about { background:white; color:#111; }
+.about h3 { color:#FFD700; margin:0 0 8px; }
+body.white .about h3 { color:#1a73e8; }
+body.green .about h3 { color:#075E54; }
+.footer { text-align:center; font-size:12px; opacity:0.6; margin-top:15px; }
 </style>
 </head>
-<body>
-<h2 style="color:#FFD700">FIND ME SEARCH</h2>
-<p>Search By Name or Number - Secure Version</p>
-<form method="POST" action="/search">
-<input name="q" placeholder="Type number e.g. 0812...">
-<br><br><button class="gold">🔍 SEARCH</button>
+<body class="gold">
+<div class="header">
+<div class="logo">🔍 FINDME</div>
+<div class="sub">Find Anyone in Nigeria - Fast & Free</div>
+<div class="themes">
+<button class="t-gold" onclick="setTheme('gold')">✨ GOLD</button>
+<button class="t-white" onclick="setTheme('white')">🤍 WHITE</button>
+<button class="t-green" onclick="setTheme('green')">💚 GREEN</button>
+</div>
+</div>
+<div class="box">
+<form method="GET">
+<input name="q" placeholder="Type name or number e.g. 0812..." value="{{ q }}">
+<button class="btn btn-search">🔍 SEARCH</button>
 </form>
-<hr>
-<h3>+ ADD MYSELF</h3>
+<div class="section-title">+ ADD MYSELF</div>
 <form method="POST" action="/add">
-<input name="name" placeholder="Your Name" required><br><br>
-<input name="number" placeholder="Your Number" required><br><br>
-<button class="green">+ ADD ME SECURELY</button>
+<input name="name" placeholder="Your Name" required>
+<input name="number" placeholder="Your Number" required>
+<button class="btn btn-add">+ ADD ME SECURELY</button>
 </form>
-<hr>
-<h3>Results:</h3>
+<div class="section-title">Results: {{ people|length }}</div>
 {% for p in people %}
 <div class="card">
-<b>{{ p[0] }}</b><br>{{ p[1] }}<br>
+<div><b>{{ p[0] }}</b><br><span>{{ p[1] }}</span></div>
+<div class="badge">✓ Verified</div>
 </div>
 {% endfor %}
-<br>
-<p style="font-size:12px;color:#888">Made by T Miebaka Fibes | Secured by Chron</p>
-<div style="margin-top:40px;padding:20px;background:#1a1a1a;border-radius:10px;text-align:left">
-<h3 style="color:#FFD700">About FindMe</h3>
-<p>FindMe is a free people search platform created by CHRON AGOPOSTAM in Port Harcourt, Nigeria. It helps people find each other by name anywhere in the world. Add your name, let the world find you.</p>
-<h3 style="color:#FFD700">Privacy Policy</h3>
-<p>We respect your privacy. FindMe only shows the name and information you choose to add. We do not sell your data. If you want your name removed, contact us and we will remove it. By using FindMe, you agree to use it respectfully and not to harass anyone.</p>
-<p style="font-size:12px;color:#999">© 2026 FindMe by CHRON AGOPOSTAM - Port Harcourt, Nigeria</p>
+<div class="about">
+<h3>About FindMe</h3>
+FindMe is a free people search platform created by CHRON. Search by name or number, add yourself securely, and connect with people across Nigeria.
 </div>
+<div class="footer">Made by T Miebaka Fibes | Secured by Chron</div>
+</div>
+<script>
+function setTheme(t){ document.body.className = t; localStorage.setItem('theme', t); }
+let saved = localStorage.getItem('theme'); if(saved){ document.body.className = saved; }
+</script>
 </body>
 </html>
 """
 
-@app.route("/")
+@app.route('/', methods=['GET'])
 def home():
-    return render_template_string(HTML, people=people)
+    q = request.args.get('q','').strip()
+    conn = get_db()
+    if q:
+        people = conn.execute("SELECT name, number FROM people WHERE name LIKE ? OR number LIKE ?", ('%'+q+'%','%'+q+'%')).fetchall()
+    else:
+        people = conn.execute("SELECT name, number FROM people LIMIT 20").fetchall()
+    conn.close()
+    return render_template_string(HTML, people=people, q=q)
 
-@app.route("/search", methods=["POST"])
-def search():
-    q = html.escape(request.form.get("q",""))
-    found = [p for p in people if q in p[0] or q in p[1]]
-    return render_template_string(HTML, people=found)
-
-@app.route("/add", methods=["POST"])
+@app.route('/add', methods=['POST'])
 def add():
-    name = html.escape(request.form.get("name","")[:50])
-    number = html.escape(request.form.get("number","")[:20])
+    name = request.form.get('name','').strip()
+    number = request.form.get('number','').strip()
     if name and number:
-        people.append((name, number))
-    return redirect("/")
+        conn = get_db()
+        conn.execute("INSERT INTO people VALUES (?,?)", (name, number))
+        conn.commit(); conn.close()
+    return home()
 
-@app.route("/delete", methods=["POST"])
-def delete():
-    if request.form.get("pwd","") != ADMIN_PASSWORD:
-        return "WRONG PASSWORD! Only Admin can delete. <a href='/'>Go Back</a>"
-    num = request.form.get("number","")
-    global people
-    people = [p for p in people if p[1] != num]
-    return redirect("/")
-
-@app.route("/clean", methods=["POST"])
-def clean():
-    if request.form.get("pwd","") != ADMIN_PASSWORD:
-        return "WRONG PASSWORD! <a href='/'>Go Back</a>"
-    people.clear()
-    return redirect("/")
-@app.route('/privacy')
-def privacy():
-    return"CHORN AGOPOSTAM- FIND ME Privacy Policy: We only store Name and Phone Number you give us. We do not sell your data. To delete your data, contact Admin on WhatsApp. Your data is stored securely."
-@app.route("/sitemap.xml")
-def sitemap():
-    xml = """<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url><loc>https://findme-zs89.onrender.com/</loc><changefreq>daily</changefreq><priority>1.0</priority></url>
-</urlset>"""
-    return Response(xml, mimetype="application/xml")
-if __name__ == "__main__":
-    app.run()
-
-    
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))
