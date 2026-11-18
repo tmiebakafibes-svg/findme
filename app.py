@@ -25,51 +25,50 @@ button{width:100%; padding:18px; font-size:22px; font-weight:bold; background:#0
 .danger{background:#ff3b30; margin-top:10px}
 </style></head><body><div class="box">
 <h1>🔍 FindMe</h1>
-<p class="sub">Find Anyone, Anywhere in the World 🌍</p>
+<p class="sub">Find Anyone, Anywhere in the World 🌍<br>Search by Name OR Number</p>
 <form method="get">
-<input name="search" placeholder="Type first name OR surname..." value="{{search}}">
+<input name="search" placeholder="Type name OR phone number..." value="{{search}}">
 <button>🔍 SEARCH</button>
 </form>
 {% if search %}
   {% if matches %}
-    <p>Found {{matches|length}} person(s) for "{{search}}":</p>
+    <p>Found {{matches|length}} result(s) for "{{search}}":</p>
     {% for p in matches %}
-      <a href="/?search={{p['name']}}&show=1" style="text-decoration:none"><button type="button" class="person">👤 {{p['name']}}</button></a>
+      <a href="/?search={{p['name']}}&show=1" style="text-decoration:none"><button type="button" class="person">👤 {{p['name']}}<br><span style="font-size:16px; color:#555">{{p['number']}}</span></button></a>
     {% endfor %}
   {% else %}<p class="result">No results for "{{search}}"</p>{% endif %}
 {% endif %}
-{% if show and found %}<p class="result">✅ <b style="font-size:26px">{{found['name']}}</b><br>{{found['number']}}</p>{% endif %}
 {% if is_admin %}
 <p class="owner"><b>OWNER ONLY 👑</b><br>Total people added: <b>{{total}}</b></p>
 <a href="/?admin=Miebaka2026&clear=1" onclick="return confirm('Delete ALL names?')"><button type="button" class="danger">🗑️ DELETE ALL NAMES</button></a>
 {% endif %}
 <hr><h2>Add Yourself</h2>
 <form method="post">
-<input name="name" placeholder="Your Full Name e.g Elisha Fimeresima" required>
+<input name="name" placeholder="Your Full Name" required>
 <input name="number" placeholder="Your Phone Number" required>
 <button>ADD ME SECURELY ✅</button>
 </form>
+<p style="color:#888; font-size:14px; margin-top:20px">If someone calls you with unknown number, search the number here to know who called you.</p>
 </div></body></html>
 """
 @app.route("/", methods=["GET","POST"])
 def home():
     is_admin=request.args.get("admin","")==ADMIN_CODE
     if is_admin and request.args.get("clear")=="1":
-        save([])
-        return render_template_string("<h1>All Deleted ✅</h1><a href='/?admin=Miebaka2026'>Go back</a>")
+        save([]); return "<h1>All Deleted ✅</h1><a href='/?admin=Miebaka2026'>Go back</a>"
     data=load()
     if request.method=="POST":
         data.append({"name":request.form["name"].strip(),"number":request.form["number"].strip()})
         save(data)
     search=request.args.get("search","").strip()
-    show=request.args.get("show","")
     matches=[]; found=None
     if search:
-        matches=[p for p in data if search.lower() in p["name"].lower()]
-        if show and matches:
-            for p in matches:
-                if p["name"].lower()==search.lower(): found=p
-            if not found and len(matches)==1: found=matches[0]
-    return render_template_string(HTML, search=search, matches=matches, found=found, show=show, total=len(data), is_admin=is_admin)
+        s=search.lower().replace(" ","").replace("+","")
+        for p in data:
+            name_match = search.lower() in p["name"].lower()
+            num_clean = p["number"].replace(" ","").replace("+","").replace("-","")
+            num_match = s in num_clean
+            if name_match or num_match: matches.append(p)
+    return render_template_string(HTML, search=search, matches=matches, found=found, show=request.args.get("show",""), total=len(data), is_admin=is_admin)
 if __name__=="__main__":
     app.run(host="0.0.0.0", port=int(os.environ.get("PORT",5000)))
