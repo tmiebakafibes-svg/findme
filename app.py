@@ -78,7 +78,7 @@ body.green .about h3 { color:#075E54; }
 <div class="header">
 <div class="logo">🔍 FINDME</div>
 <div class="sub">Find Anyone in Nigeria - Fast & Free</div>
-<div><span class="counter">👥 {{ total }} People Already Added</span></div>
+<div><span class="counter">👥 {{ total }} person(s) Already Added</span></div>
 <div class="themes">
 <button class="t-gold" onclick="setTheme('gold')">✨ GOLD</button>
 <button class="t-white" onclick="setTheme('white')">🤍 WHITE</button>
