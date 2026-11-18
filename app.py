@@ -3,6 +3,12 @@ import sqlite3, os
 
 app = Flask(__name__)
 app.secret_key = os.environ.get('SECRET_KEY', 'findme-change-this-key-12345')
+@app.after_request
+def add_security_headers(response):
+    response.headers['X-Content-Type-Options'] = 'nosniff'
+    response.headers['X-Frame-Options'] = 'DENY'
+    response.headers['X-XSS-Protection'] = '1; mode=block'
+    return response
 def get_db():
     conn = sqlite3.connect('people.db')
     conn.execute('CREATE TABLE IF NOT EXISTS people (name TEXT, number TEXT)')
