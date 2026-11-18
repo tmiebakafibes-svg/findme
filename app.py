@@ -20,23 +20,20 @@ body { margin:0; padding:0; transition:0.3s; }
 body.gold { background:#0a0a0a; color:white; }
 body.white { background:#f5f7fa; color:#111; }
 body.green { background:#e8f5e9; color:#111; }
-
-/* HEADER */
 .header { text-align:center; padding:25px 15px 10px; }
 .logo { font-size:38px; font-weight:900; letter-spacing:2px; }
 body.gold .logo { color:#FFD700; }
 body.white .logo { color:#1a73e8; }
 body.green .logo { color:#075E54; }
 .sub { font-size:14px; opacity:0.7; margin-top:4px; }
-
-/* THEME BUTTONS */
+.counter { display:inline-block; background:#FFD700; color:black; font-weight:900; font-size:13px; padding:6px 14px; border-radius:20px; margin-top:10px; }
+body.white .counter { background:#1a73e8; color:white; }
+body.green .counter { background:#075E54; color:white; }
 .themes { display:flex; justify-content:center; gap:8px; margin:12px 0; }
 .themes button { border:none; padding:8px 14px; border-radius:20px; font-weight:bold; cursor:pointer; font-size:12px; }
 .t-gold { background:#FFD700; color:black; }
 .t-white { background:white; color:#1a73e8; border:1px solid #ddd !important; }
 .t-green { background:#25D366; color:white; }
-
-/* BOX */
 .box { max-width:480px; margin:0 auto; padding:0 16px 30px; }
 input { width:100%; padding:14px; border-radius:12px; border:2px solid #FFD700; margin-bottom:10px; font-size:16px; outline:none; background:white; color:black; }
 body.white input { border-color:#1a73e8; }
@@ -46,6 +43,7 @@ body.gold .btn-search { background:#FFD700; color:black; box-shadow:0 4px 15px r
 body.white .btn-search { background:#1a73e8; color:white; }
 body.green .btn-search { background:#075E54; color:white; }
 .btn-add { background:#25D366; color:white; box-shadow:0 4px 15px rgba(37,211,102,0.4); margin-top:5px; }
+.btn-share { background:#075E54; color:white; margin-top:15px; display:flex; align-items:center; justify-content:center; gap:8px; text-decoration:none; }
 .section-title { text-align:center; font-size:20px; font-weight:900; margin:22px 0 12px; }
 .card { background:white; color:black; padding:16px; border-radius:16px; margin-bottom:10px; display:flex; align-items:center; justify-content:space-between; box-shadow:0 2px 10px rgba(0,0,0,0.1); }
 .card b { font-size:18px; }
@@ -64,6 +62,7 @@ body.green .about h3 { color:#075E54; }
 <div class="header">
 <div class="logo">🔍 FINDME</div>
 <div class="sub">Find Anyone in Nigeria - Fast & Free</div>
+<div><span class="counter">👥 {{ total }} People Already Added</span></div>
 <div class="themes">
 <button class="t-gold" onclick="setTheme('gold')">✨ GOLD</button>
 <button class="t-white" onclick="setTheme('white')">🤍 WHITE</button>
@@ -81,6 +80,7 @@ body.green .about h3 { color:#075E54; }
 <input name="number" placeholder="Your Number" required>
 <button class="btn btn-add">+ ADD ME SECURELY</button>
 </form>
+<a class="btn btn-share" href="#" onclick="shareSite(); return false;">📤 SHARE FINDME ON WHATSAPP</a>
 <div class="section-title">Results: {{ people|length }}</div>
 {% for p in people %}
 <div class="card">
@@ -97,6 +97,10 @@ FindMe is a free people search platform created by CHRON. Search by name or numb
 <script>
 function setTheme(t){ document.body.className = t; localStorage.setItem('theme', t); }
 let saved = localStorage.getItem('theme'); if(saved){ document.body.className = saved; }
+function shareSite(){
+  let text = "Check this out! 🔍 FINDME - Find Anyone in Nigeria Fast & Free. Add yourself: " + window.location.origin;
+  window.open("https://wa.me/?text=" + encodeURIComponent(text), "_blank");
+}
 </script>
 </body>
 </html>
@@ -106,12 +110,13 @@ let saved = localStorage.getItem('theme'); if(saved){ document.body.className = 
 def home():
     q = request.args.get('q','').strip()
     conn = get_db()
+    total = conn.execute("SELECT COUNT(*) FROM people").fetchone()[0]
     if q:
         people = conn.execute("SELECT name, number FROM people WHERE name LIKE ? OR number LIKE ?", ('%'+q+'%','%'+q+'%')).fetchall()
     else:
         people = conn.execute("SELECT name, number FROM people LIMIT 20").fetchall()
     conn.close()
-    return render_template_string(HTML, people=people, q=q)
+    return render_template_string(HTML, people=people, q=q, total=total)
 
 @app.route('/add', methods=['POST'])
 def add():
